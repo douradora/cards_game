@@ -1,7 +1,7 @@
 import {Server}from 'socket.io'
 import express from 'express'
 import {createServer} from 'http'; 
-
+import path from 'path';
 const app = express();
 const httpSever = createServer(app);
 const io = new Server(httpSever,{cors:{
@@ -10,15 +10,19 @@ const io = new Server(httpSever,{cors:{
 
 io.on("connection",(socket)=>{
     console.log(socket.id)
+    
+
+
+
+
 })
-
-
+app.use(express.static('public'))
 
 
 
 
 app.get('/',(req,res)=>{
-    res.send('hello word');
+    res.sendFile(path.join(__dirname,"pages","index.html"))
 })
 
 
