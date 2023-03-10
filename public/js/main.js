@@ -1,5 +1,5 @@
 try{
-const socket =io("http://localhost:7000");
+const socket =io();
 
 socket.on("connect",()=>{
     
