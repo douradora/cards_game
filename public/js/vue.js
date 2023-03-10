@@ -3,7 +3,7 @@
   const app = Vue.createApp({
     data() {
       return {
-        message: "hello"
+        message: "hello word"
       }
     }
   })
